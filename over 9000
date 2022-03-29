@@ -1,0 +1,16 @@
+#Function which takes in a list until it's over 9000
+def over_nine_thousand(lst):
+#Variable set to zero to keep track of the list
+  rolling_tally = 0
+ # loop to iterate through list 
+  for i in lst:
+  #control flow to see if the number is above 9000
+    if rolling_tally < 9000:
+  #if list below it will keep adding till it's above
+      rolling_tally += i
+   #if list is equal to zero will just return zero 
+    elif rolling_tally == 0:
+      return 0 
+  #finally we return our variable with the newly added list components.
+  return rolling_tally
+        
