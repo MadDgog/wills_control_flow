@@ -1,0 +1,20 @@
+#Function contains 2 lists:
+def larger_sum(lst1, lst2):
+# Step 1:we begin by creating a variable equal to zero so we can add upon it.  
+   lst1_sum = 0
+ # Step 2: Now we iterate through the first list.  
+  for i in lst1:
+    #for every number in the list we add this to our variable keeping a rolling tally.
+    lst1_sum += i
+  #repeat step1 and step2 but for list 2
+  lst2_sum = 0
+  for i in lst2:
+    lst2_sum += i
+  
+""" if list1 is greater or equal
+to list2 we return list1 else if list2 is
+greater we return list2."""  
+  if lst1_sum >= lst2_sum:
+    return lst1
+  elif lst1_sum < lst2_sum:
+    return lst2
