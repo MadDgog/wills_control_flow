@@ -1,0 +1,18 @@
+
+"""creating a function which compares 
+to lists and creates a new list
+which has the index where each of the lists
+are the same"""
+def same_values(lst1, lst2):
+ #first iterate through list 1 only once thus why we use range(len(.
+    for i in range(len(lst1)):
+  #Second create an empty lst for our iteration to be stored.
+      new_lst = []
+ #Thirdly within the lst1 iteration proceed to iterate through list2 only once 
+      for i in range(len(lst2)):
+ """This if statement checks if list1 at index i is equal to list 2 at index i"""
+        if lst1[i] == lst2[i]:
+  #if equal the index is appended to the new list
+          new_lst.append(i)
+   #finally we return the new list
+    return new_lst
