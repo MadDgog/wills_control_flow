@@ -1,0 +1,48 @@
+"""Hacking the Fender"""
+#1 import the csv file
+import csv 
+#2 create an empty set to store our compromised users
+compromised_users = []
+#3 open the file in read mode
+with open('passwords.csv') as password_file:
+#4 use DictReader to read through the file 
+  password_csv = csv.DictReader(password_file)
+ #5 loop through the file and append these to the compromised user empty set
+  for row in password_csv:
+    compromised_users.append(row['Username'])
+#6 open the compromised users txt in write mode
+with open('compromised_users.txt', 'w') as compromised_user_file:
+#7 loop through compromised users and append these to the file.
+  for user in compromised_users:
+    compromised_user_file.write(user)
+
+#8 import json 
+import json
+#9 open the json file in write mode
+with open('boss_message.json', 'w') as boss_message:
+#10 create a dictionary to store a message for the boss
+  boss_message_dict = {'recipient':"The Boss", "message":"Mission Success"}
+#11 use json.dump to add the dictionary to the boss_message
+  json.dump(boss_message_dict, boss_message)
+#12 open the new passwords csv 
+with open('new_passwords.csv', 'w') as new_passwords_obj:
+#13 write out slash_nulls signature and it must be done with a triple quote
+  slash_null_sig = """
+   _  _     ___   __  ____             
+  / )( \   / __) /  \(_  _)            
+  ) \/ (  ( (_ \(  O ) )(              
+  \____/   \___/ \__/ (__)             
+   _  _   __    ___  __ _  ____  ____  
+  / )( \ / _\  / __)(  / )(  __)(    \ 
+  ) __ (/    \( (__  )  (  ) _)  ) D ( 
+  \_)(_/\_/\_/ \___)(__\_)(____)(____/ 
+        ____  __     __   ____  _  _ 
+  ___   / ___)(  )   / _\ / ___)/ )( \
+  (___)  \___ \/ (_/\/    \\___ \) __ (
+       (____/\____/\_/\_/(____/\_)(_/
+  __ _  _  _  __    __                
+  (  ( \/ )( \(  )  (  )               
+  /    /) \/ (/ (_/\/ (_/\             
+  \_)__)\____/\____/\____/"""
+  #14 write the slash_null signature onto the new_passwords_file.
+  new_passwords_obj.write(slash_null_sig)
