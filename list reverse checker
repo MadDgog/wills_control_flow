@@ -1,0 +1,13 @@
+"""A function which takes in two lists
+and tells you if the lists are reverses of each other
+and returns a boolean if it is true
+i.e. 1,2,3 and 3,2,1 would return True"""
+def reversed_list(lst1, lst2):
+ #iterate through lst 1 making sure to only do this once thus range(len(.
+    for i in range(len(lst1)):
+ #iterating through list 2 only once.
+        for i in range(len(lst2)):
+ """using an if statement to check if lst1 and index i is not eqaul to lst2 and the last index i"""
+            if lst1[i] != lst2[len(lst2)-1-i]:
+                return False
+    return True
